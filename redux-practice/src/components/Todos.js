@@ -9,7 +9,7 @@ const TodoItem = ({ todo, onToggle, onRemove }) => {
         checked={todo.done}
         readOnly={true}
       />
-      <span>예제 텍스트</span>
+      <span>{todo.text}</span>
       <button onClick={() => onRemove(todo.id)}>삭제</button>
     </div>
   );
@@ -28,7 +28,7 @@ const Todos = ({
     onInsert(input);
     onChangeInput('');
   };
-  const onChange = (e) => onChangeInput(e.target.input);
+  const onChange = (e) => onChangeInput(e.target.value);
   return (
     <div>
       <form onSubmit={onSubmit}>
